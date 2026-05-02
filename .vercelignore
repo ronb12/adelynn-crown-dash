@@ -1,0 +1,10 @@
+# Keep static deploy small — only root HTML/CSS/PWA + assets are needed
+ios/
+scripts/
+tools/
+node_modules/
+.git/
+*.md
+package.json
+package-lock.json
+public/
