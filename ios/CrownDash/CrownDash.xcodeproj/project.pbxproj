@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F613122CF662326C590D3BC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0789A5D7F9124CE52A04B3D0 /* PrivacyInfo.xcprivacy */; };
+		786CFF1A3DC8C7D7C34F6BD0 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9AA682207EA3E0B8B54A07 /* GameCenterManager.swift */; };
+		AA61CC8D34F0BE7F929BB35B /* CrownDashApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CE5C6202105B543605135F /* CrownDashApp.swift */; };
+		CD9C04476442EB669457CF4F /* GameAssetSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B60089D5CACE3AD2DF04482 /* GameAssetSchemeHandler.swift */; };
+		DDECD937E5DA88F55B934EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93DB671C89F6848E2FE0EAFE /* Assets.xcassets */; };
+		F4E4DB88525FEE903C73271E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF1548759FA646FDB4CF20 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0789A5D7F9124CE52A04B3D0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1DDF1548759FA646FDB4CF20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2B60089D5CACE3AD2DF04482 /* GameAssetSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAssetSchemeHandler.swift; sourceTree = "<group>"; };
+		4AB1115D9543B1201CA90D9E /* CrownDash.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CrownDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		699D91DA272DC2E28AA3A632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9052AEA61629843257620F2A /* CrownDash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrownDash.entitlements; sourceTree = "<group>"; };
+		93DB671C89F6848E2FE0EAFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1CE5C6202105B543605135F /* CrownDashApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownDashApp.swift; sourceTree = "<group>"; };
+		CB9AA682207EA3E0B8B54A07 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		7A33C43A37D0B9DDDF3FCA52 /* CrownDash */ = {
+			isa = PBXGroup;
+			children = (
+				93DB671C89F6848E2FE0EAFE /* Assets.xcassets */,
+				1DDF1548759FA646FDB4CF20 /* ContentView.swift */,
+				9052AEA61629843257620F2A /* CrownDash.entitlements */,
+				C1CE5C6202105B543605135F /* CrownDashApp.swift */,
+				2B60089D5CACE3AD2DF04482 /* GameAssetSchemeHandler.swift */,
+				CB9AA682207EA3E0B8B54A07 /* GameCenterManager.swift */,
+				699D91DA272DC2E28AA3A632 /* Info.plist */,
+				0789A5D7F9124CE52A04B3D0 /* PrivacyInfo.xcprivacy */,
+			);
+			path = CrownDash;
+			sourceTree = "<group>";
+		};
+		953AA62353825C59B8F07AB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AB1115D9543B1201CA90D9E /* CrownDash.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C75D282A527DDCEE673B19A5 = {
+			isa = PBXGroup;
+			children = (
+				7A33C43A37D0B9DDDF3FCA52 /* CrownDash */,
+				953AA62353825C59B8F07AB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0E75E1746B5D16C3A053230 /* CrownDash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25B45C3946D99E026276EEB2 /* Build configuration list for PBXNativeTarget "CrownDash" */;
+			buildPhases = (
+				8F17C7C805A55D9595E5CC82 /* Sources */,
+				AD65B7C46F5E46D9407FD38C /* Bundle Web Game */,
+				43CFFA45B5B1B4FDD6156D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrownDash;
+			packageProductDependencies = (
+			);
+			productName = CrownDash;
+			productReference = 4AB1115D9543B1201CA90D9E /* CrownDash.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDB7CB563AC81AA427D56295 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F0E75E1746B5D16C3A053230 = {
+						DevelopmentTeam = 4SQJ3AH62S;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0E06CE851585175B1E014562 /* Build configuration list for PBXProject "CrownDash" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C75D282A527DDCEE673B19A5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0E75E1746B5D16C3A053230 /* CrownDash */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43CFFA45B5B1B4FDD6156D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDECD937E5DA88F55B934EC2 /* Assets.xcassets in Resources */,
+				1F613122CF662326C590D3BC /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD65B7C46F5E46D9407FD38C /* Bundle Web Game */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle Web Game";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -e\nWEBROOT=\"${PROJECT_DIR}/../..\"\nAPP_DIR=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\nGAME_DIR=\"${APP_DIR}/Game\"\nmkdir -p \"${GAME_DIR}\"\necho \"Bundling web game from ${WEBROOT} -> ${GAME_DIR}\"\ntest -f \"${WEBROOT}/play.html\" || { echo \"error: play.html not found at ${WEBROOT}\"; exit 1; }\ncp \"${WEBROOT}/play.html\" \"${GAME_DIR}/index.html\"\nrm -rf \"${GAME_DIR}/assets\"\ncp -R \"${WEBROOT}/assets\" \"${GAME_DIR}/assets\"\ncp \"${WEBROOT}/manifest.webmanifest\" \"${GAME_DIR}/\" 2>/dev/null || true\ncp \"${WEBROOT}/service-worker.js\" \"${GAME_DIR}/\" 2>/dev/null || true\ncp \"${WEBROOT}/favicon.ico\" \"${GAME_DIR}/\" 2>/dev/null || true\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F17C7C805A55D9595E5CC82 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4E4DB88525FEE903C73271E /* ContentView.swift in Sources */,
+				AA61CC8D34F0BE7F929BB35B /* CrownDashApp.swift in Sources */,
+				CD9C04476442EB669457CF4F /* GameAssetSchemeHandler.swift in Sources */,
+				786CFF1A3DC8C7D7C34F6BD0 /* GameCenterManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E46F610B19024279F9EAB26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQJ3AH62S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = CrownDash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bradleyvirtual.crowndash;
+				PRODUCT_NAME = CrownDash;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77BB81498FD2FAF55789D12D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CDAD64E0DF82508275C21026 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4SQJ3AH62S;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = CrownDash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bradleyvirtual.crowndash;
+				PRODUCT_NAME = CrownDash;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7C52D2C63093DFA1739993F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E06CE851585175B1E014562 /* Build configuration list for PBXProject "CrownDash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77BB81498FD2FAF55789D12D /* Debug */,
+				D7C52D2C63093DFA1739993F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		25B45C3946D99E026276EEB2 /* Build configuration list for PBXNativeTarget "CrownDash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E46F610B19024279F9EAB26 /* Debug */,
+				CDAD64E0DF82508275C21026 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDB7CB563AC81AA427D56295 /* Project object */;
+}

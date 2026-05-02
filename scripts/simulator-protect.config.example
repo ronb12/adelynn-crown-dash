@@ -1,0 +1,7 @@
+# Simulators to NEVER erase when running cleanup-simulators-keep-protected.sh
+# Copy this file to simulator-protect.config and add one device UUID per line.
+# Get UUIDs:  xcrun simctl list devices
+# Or:         ./scripts/list-simulators.sh
+#
+# Example (replace with your real UDID from Xcode’s destination or simctl list):
+# 1C51730D-B147-4CE2-AF16-64FDB3D29EC1

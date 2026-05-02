@@ -1,5 +1,0 @@
-Recommended iOS settings:
-- Supported orientations: Landscape Left, Landscape Right
-- Status bar hidden: YES
-- Requires full screen: YES
-- No camera/mic/location permissions needed for this build

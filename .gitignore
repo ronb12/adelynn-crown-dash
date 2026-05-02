@@ -1,5 +1,30 @@
+node_modules/
 .DS_Store
-.vercel
-*.log
-.env
-.env.*
+.cursor/
+.tmp/
+.vercel/
+
+# Local path to Blender when it lives on an external drive (see scripts/find-blender.mjs)
+scripts/blender-binary.path
+# Local CoreSimulator UUID(s) — do not commit personal simulator IDs
+scripts/simulator-protect.config
+
+# iOS / Ruby tooling (reinstall with bundle install)
+ios/CrownDash/vendor/
+ios/CrownDash/.bundle/
+
+# Xcode / Fastlane build artifacts
+ios/CrownDash/build/
+ios/CrownDash/.tmp/
+ios/CrownDash/DerivedDataScreenshots/
+
+# Accidental duplicate import at repo root
+character (1).fbx
+
+# Secrets — never commit
+ios/CrownDash/fastlane/.env
+*.p8
+AuthKey_*.p8
+
+# Xcode user-specific
+**/xcuserdata/

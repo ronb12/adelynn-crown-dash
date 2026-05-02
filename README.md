@@ -3,7 +3,8 @@
 This package includes a polished web/PWA version of the game using the Adelynn sprite sheet.
 
 ## What is included
-- `index.html` playable game
+- `index.html` landing page · `privacy.html` · `terms.html`
+- `play.html` playable game (also bundled as `Game/index.html` in the iOS app)
 - Real sprite animation frames
 - Smooth movement interpolation
 - Jump, dash, run, fall, land animation switching
@@ -17,7 +18,7 @@ This package includes a polished web/PWA version of the game using the Adelynn s
 - Privacy policy starter
 
 ## Test locally
-Open `index.html` in a browser.
+Open `http://localhost:8080/` for the landing page, or `http://localhost:8080/play.html` for the game only.
 
 For best testing, run a local server:
 ```bash
@@ -25,18 +26,17 @@ python3 -m http.server 8080
 ```
 Then open:
 ```text
-http://localhost:8080
+http://localhost:8080/
 ```
 
-## Convert to iOS app
-Best simple path:
-1. Open Xcode.
-2. Create a new iOS app.
-3. Add a `WKWebView`.
-4. Bundle this folder into the app.
-5. Load `index.html` locally.
-6. Set landscape orientation.
-7. Add the app icon from `assets/icon-1024.png`.
+## iOS app (Xcode project included)
+An Xcode project lives at **`ios/CrownDash/`**. It wraps the same web game in a `WKWebView` and copies **`play.html` → `Game/index.html`** plus `assets` into the app bundle on every build (the marketing site files are not required in the app).
+
+1. Install [XcodeGen](https://github.com/yonaskolb/XcodeGen) only if you edit `ios/CrownDash/project.yml` and need to regenerate the `.xcodeproj`.
+2. Open **`ios/CrownDash/CrownDash.xcodeproj`** in Xcode.
+3. Set your **Signing Team**, choose a simulator or device, press **Run**.
+
+Details: `ios/CrownDash/README.md`.
 
 ## App Store checklist
 - App icon: included.

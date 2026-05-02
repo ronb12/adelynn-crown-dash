@@ -1,0 +1,14 @@
+# Bradley Virtual Solutions, LLC — Apple Developer Team
+# https://developer.apple.com/account → Membership → Team ID
+
+app_identifier("com.bradleyvirtual.crowndash")
+
+for_platform :ios do
+  team_id("4SQJ3AH62S")
+  # Optional: if App Store Connect shows a different Team ID for uploads, set:
+  # ENV["FASTLANE_ITC_TEAM_ID"] in .env (same value usually works for single-team orgs)
+end
+
+# Apple ID for uploads when not using an App Store Connect API key.
+# Prefer API key for CI and non-interactive runs (see fastlane/README.md).
+apple_id(ENV["FASTLANE_APPLE_ID"]) if ENV["FASTLANE_APPLE_ID"]

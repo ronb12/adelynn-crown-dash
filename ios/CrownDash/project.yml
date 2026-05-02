@@ -1,0 +1,52 @@
+name: CrownDash
+options:
+  bundleIdPrefix: com.bradleyvirtual
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+  groupOrdering:
+    - order: [CrownDash]
+
+targets:
+  CrownDash:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: CrownDash
+        excludes:
+          - "**/.DS_Store"
+    resources:
+      - path: CrownDash/PrivacyInfo.xcprivacy
+    settings:
+      base:
+        PRODUCT_NAME: CrownDash
+        PRODUCT_BUNDLE_IDENTIFIER: com.bradleyvirtual.crowndash
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_FILE: CrownDash/Info.plist
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: "4SQJ3AH62S"
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+    postCompileScripts:
+      - name: Bundle Web Game
+        basedOnDependencyAnalysis: false
+        shell: /bin/bash
+        script: |
+          set -e
+          WEBROOT="${PROJECT_DIR}/../.."
+          APP_DIR="${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app"
+          GAME_DIR="${APP_DIR}/Game"
+          mkdir -p "${GAME_DIR}"
+          echo "Bundling web game from ${WEBROOT} -> ${GAME_DIR}"
+          test -f "${WEBROOT}/play.html" || { echo "error: play.html not found at ${WEBROOT}"; exit 1; }
+          cp "${WEBROOT}/play.html" "${GAME_DIR}/index.html"
+          rm -rf "${GAME_DIR}/assets"
+          cp -R "${WEBROOT}/assets" "${GAME_DIR}/assets"
+          cp "${WEBROOT}/manifest.webmanifest" "${GAME_DIR}/" 2>/dev/null || true
+          cp "${WEBROOT}/service-worker.js" "${GAME_DIR}/" 2>/dev/null || true
+          cp "${WEBROOT}/favicon.ico" "${GAME_DIR}/" 2>/dev/null || true

@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "blender:which": "node scripts/blender-which.mjs",
+    "blender:sprite-refs": "node scripts/open-blender-sprite-refs.mjs",
+    "blender:cli-runner-demo": "node scripts/run-blender-cli-runner-demo.mjs",
+    "blender:automation": "node scripts/run-blender-3d-automation.mjs",
+    "convert:character": "node scripts/convert-fbx-to-glb.mjs",
+    "convert:character:prep": "node scripts/convert-fbx-to-glb.mjs --prep --blender-only",
+    "convert:character:blender": "node scripts/convert-fbx-to-glb.mjs --blender-only",
+    "convert:character:from-downloads": "node scripts/convert-fbx-to-glb.mjs \"$HOME/Downloads/character (1).fbx\"",
+    "convert:character:fbx-in-assets-spaced-name": "node scripts/convert-fbx-to-glb.mjs \"assets/character (1).fbx\"",
+    "build:environment": "node scripts/build-environment.mjs",
+    "build:game-props": "node scripts/build-game-props.mjs",
+    "convert:animations": "node scripts/batch-fbx-to-glb.mjs",
+    "vendor:trim": "node scripts/trim-three-vendor.mjs",
+    "vendor:gltf-bundle": "node scripts/bundle-gltf-bootstrap.mjs",
+    "postinstall": "node scripts/trim-three-vendor.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "fbx2gltf": "0.9.7-p1",
+    "three": "0.160.0"
+  }
+}

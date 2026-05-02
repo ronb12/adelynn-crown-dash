@@ -1,12 +1,12 @@
 {
-  "name": "Crown Dash: Princess Run",
+  "name": "Adelynn's Crown Dash",
   "short_name": "Crown Dash",
-  "description": "A fast, family-friendly princess runner featuring Adelynn of Lumendale.",
-  "start_url": "./index.html",
+  "description": "Princess Run · Lumendale — a fast, family-friendly runner featuring Adelynn.",
+  "start_url": "./play.html",
   "display": "standalone",
-  "orientation": "landscape",
-  "background_color": "#0d1427",
-  "theme_color": "#241136",
+  "orientation": "any",
+  "background_color": "#140c2e",
+  "theme_color": "#291442",
   "icons": [
     {
       "src": "assets/icon-192.png",
