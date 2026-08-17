@@ -1,12 +1,12 @@
 Adelynn's Crown Dash is a fast princess runner adventure set in the glowing kingdom of Lumendale.
 
-Guide Princess Adelynn down the castle track, collect coins, dodge hazards, and switch between royal powers to keep the run alive. Fire clears thorns, water clears wild tides, and lightning pulls coins toward you. Jump, slide, dash, and react quickly as the pace climbs.
+Guide Princess Adelynn down the castle track, collect coins, dodge hazards, and switch between royal powers to keep the run alive. Bloom clears rose vines, Water clears wild tides, and Sparkle pulls coins toward you. Jump, slide, dash, and react quickly as the pace climbs.
 
 Features:
 
 - Fast arcade runner gameplay
 - Touch controls built for iPhone and iPad
-- Fire, water, and lightning power switching
+- Bloom, Water, and Sparkle power switching
 - Coins, shields, magnets, and timed score boosts
 - Daily and weekly challenges
 - Unlockable runners and cosmetic upgrades

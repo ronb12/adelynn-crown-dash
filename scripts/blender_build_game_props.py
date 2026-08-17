@@ -84,13 +84,50 @@ def add_cyl(name, loc, scale, rgb, rot=(0, 0, 0)):
     return ob
 
 
+def parent_to(child, parent):
+    child.parent = parent
+    return child
+
+
+def add_sentinel(name, loc):
+    """Dark-sector soldier hazard: readable armored silhouette, not a gray block."""
+    bpy.ops.object.empty_add(type="PLAIN_AXES", location=loc)
+    root = bpy.context.active_object
+    root.name = name
+
+    armor = (0.10, 0.11, 0.17)
+    armor_hi = (0.24, 0.28, 0.36)
+    violet = (0.34, 0.24, 0.62)
+    visor = (0.78, 0.60, 1.00)
+    metal = (0.62, 0.68, 0.74)
+
+    parts = [
+        add_box(name + "_cloak", (loc[0], loc[1] + 2, loc[2] + 3), (23, 5, 33), (0.05, 0.05, 0.09)),
+        add_box(name + "_torso", (loc[0], loc[1], loc[2] + 10), (16, 11, 21), armor),
+        add_box(name + "_chest", (loc[0], loc[1] - 0.8, loc[2] + 16), (12, 12, 5), armor_hi),
+        add_box(name + "_helm", (loc[0], loc[1], loc[2] + 36), (14, 12, 9), armor),
+        add_box(name + "_visor", (loc[0], loc[1] - 12.4, loc[2] + 36), (9, 1.2, 2.4), visor),
+        add_box(name + "_crest", (loc[0], loc[1] - 1, loc[2] + 47), (4, 8, 7), violet),
+        add_box(name + "_left_arm", (loc[0] - 18, loc[1], loc[2] + 12), (4.5, 5, 19), armor_hi),
+        add_box(name + "_right_arm", (loc[0] + 18, loc[1], loc[2] + 12), (4.5, 5, 19), armor_hi),
+        add_box(name + "_left_leg", (loc[0] - 7, loc[1], loc[2] - 15), (5.5, 6, 18), armor),
+        add_box(name + "_right_leg", (loc[0] + 7, loc[1], loc[2] - 15), (5.5, 6, 18), armor),
+        add_box(name + "_shield", (loc[0] - 25, loc[1] - 4, loc[2] + 10), (7, 3, 20), violet),
+        add_cyl(name + "_spear", (loc[0] + 27, loc[1] - 3, loc[2] + 18), (1.8, 1.8, 31), metal, (0, 0.28, 0)),
+        add_box(name + "_spear_tip", (loc[0] + 34, loc[1] - 3, loc[2] + 51), (5, 3, 7), metal),
+    ]
+    for part in parts:
+        parent_to(part, root)
+    return root
+
+
 def build():
     bpy.ops.wm.read_factory_settings(use_empty=True)
 
     add_box("Prop_beam", (0, 0, 28), (13, 9, 30), (0.22, 0.18, 0.28))
     add_box("Prop_thorn", (40, 0, 30), (22, 22, 32), (0.18, 0.42, 0.2))
     add_box("Prop_water", (90, 0, 6), (46, 22, 8), (0.08, 0.52, 0.85))
-    add_box("Prop_rock", (150, 0, 26), (26, 26, 28), (0.32, 0.34, 0.38))
+    add_sentinel("Prop_rock", (150, 0, 26))
 
     add_cyl("Prop_coin", (210, 0, 10), (14, 14, 4), (0.98, 0.82, 0.22), (1.5708, 0, 0))
 

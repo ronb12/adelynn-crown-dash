@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+HELPER="${CODEX_HOME:-$HOME/.codex}/skills/.system/imagegen/scripts/remove_chroma_key.py"
+
+if [[ ! -f "$HELPER" ]]; then
+  echo "remove_chroma_key.py helper not found at: $HELPER" >&2
+  exit 1
+fi
+
+exec /usr/bin/python3 "$HELPER" "$@"

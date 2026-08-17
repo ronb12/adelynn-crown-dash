@@ -1,8 +1,18 @@
 # CrownDash (iOS)
 
-Native wrapper around the web game using **SwiftUI** + **WKWebView**. On each build, a Run Script phase copies `play.html` as `Game/index.html`, plus `assets/`, `manifest.webmanifest`, `service-worker.js`, and `favicon.ico` from the **repository root** into `CrownDash.app/Game`.
+Native iOS game built with **SwiftUI** + **SpriteKit**. The iOS target does not load `play.html`, does not embed a `Game/` web bundle, and does not use `WKWebView`.
 
-**Offline:** The game runs entirely from the app bundle (`file://`…`/Game/`). No cellular/Wi‑Fi is required. The web app only registers a **service worker** on `http(s):` (browser/PWA); on iOS it skips registration because WebKit does not treat `file://` service workers like a normal site, and all sprites/audio already load from disk.
+**Offline:** The game runs entirely as native Swift/SpriteKit code. No cellular/Wi-Fi is required for gameplay.
+
+## Gameplay features
+
+- Princess Adelynn native SpriteKit runner with jump, dash, lane switching, shields, coins, hazards, and themed powers.
+- First-run tutorial covering controls, powers, missions, and outfit progression.
+- Royal missions with coin rewards, local high score, coin bank, and unlockable outfits.
+- Settings for sound, haptics, and reduced motion.
+- Multi-zone progression: Castle Courtyard, Rose Garden, Crystal Bridge, and Moonlit Ballroom.
+- Game Center-ready leaderboard and achievement hooks via `CrownDash.entitlements`.
+- Generated Princess Adelynn concept art bundled in `Assets.xcassets/PrincessAdelynnConcept.imageset`.
 
 ## Requirements
 
@@ -64,7 +74,7 @@ Things this codebase supports:
 
 | Area | Status |
 |------|--------|
-| Bundled HTML5 game (not a thin remote wrapper) | OK — loads `file://` `Game/index.html` from the app bundle |
+| Native game implementation | OK — SwiftUI + SpriteKit, no web wrapper |
 | Export compliance plist | `ITSAppUsesNonExemptEncryption` = `false` in `Info.plist` |
 | Privacy manifest | `PrivacyInfo.xcprivacy` bundled |
 | Tracking / ATT | Not used — no `NSUserTrackingUsageDescription` |

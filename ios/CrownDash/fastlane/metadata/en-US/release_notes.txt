@@ -1,1 +1,1 @@
-Initial App Store release with offline runner gameplay, royal power switching, coins, daily challenges, unlockable runners, and iPhone/iPad support.
+Initial App Store release with offline runner gameplay, Bloom/Water/Sparkle power switching, coins, daily challenges, unlockable runners, and iPhone/iPad support.

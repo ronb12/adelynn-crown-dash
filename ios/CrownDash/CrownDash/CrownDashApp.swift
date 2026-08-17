@@ -6,7 +6,7 @@ struct CrownDashApp: App {
         WindowGroup {
             ContentView()
                 .onAppear {
-                    GameCenterManager.shared.authenticate(from: nil)
+                    GameCenterManager.shared.authenticate()
                 }
         }
     }

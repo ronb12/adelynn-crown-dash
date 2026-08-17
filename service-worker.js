@@ -1,4 +1,4 @@
-const CACHE_NAME = 'crown-dash-v20';
+const CACHE_NAME = 'crown-dash-v24';
 const ASSETS = [
   './',
   './index.html',
@@ -30,5 +30,13 @@ self.addEventListener('activate', event => {
   );
 });
 self.addEventListener('fetch', event => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => response.ok ? response : caches.match('./index.html'))
+        .catch(() => caches.match('./index.html'))
+    );
+    return;
+  }
   event.respondWith(caches.match(event.request).then(response => response || fetch(event.request)));
 });

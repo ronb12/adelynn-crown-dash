@@ -15,7 +15,11 @@
     "convert:animations": "node scripts/batch-fbx-to-glb.mjs",
     "vendor:trim": "node scripts/trim-three-vendor.mjs",
     "vendor:gltf-bundle": "node scripts/bundle-gltf-bootstrap.mjs",
-    "postinstall": "node scripts/trim-three-vendor.mjs"
+    "postinstall": "node -e \"const fs=require('fs'),cp=require('child_process');if(fs.existsSync('scripts/trim-three-vendor.mjs'))cp.execFileSync(process.execPath,['scripts/trim-three-vendor.mjs'],{stdio:'inherit'})\"",
+    "db:apply": "node scripts/apply-neon-schema.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2"
   },
   "devDependencies": {
     "esbuild": "^0.28.0",

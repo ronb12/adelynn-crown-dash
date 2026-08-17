@@ -2,86 +2,76 @@ import Foundation
 import GameKit
 import UIKit
 
-/// Leaderboard ID — create a matching leaderboard in App Store Connect (Games → Game Center).
-enum GameCenterLeaderboards {
-    static let highScore = "com.bradleyvirtual.crowndash.leaderboard.highscore"
-}
-
-final class GameCenterManager: NSObject {
+final class GameCenterManager {
     static let shared = GameCenterManager()
 
+    private let highScoreKey = "crownDash.highScore"
+    private let leaderboardID = "com.bradleyvirtual.crowndash.leaderboard.highscore"
+    private let crownMasterID = "com.bradleyvirtual.crowndash.achievement.crownmaster"
     private var authStarted = false
+    private var isAuthenticated: Bool { GKLocalPlayer.local.isAuthenticated }
 
-    private override init() {
-        super.init()
+    private init() {}
+
+    var highScore: Int {
+        UserDefaults.standard.integer(forKey: highScoreKey)
     }
-
-    /// Call once at launch; presents Game Center sign-in UI only when required.
-    func authenticate(from viewController: UIViewController?) {
+    
+    func authenticate() {
         guard !authStarted else { return }
         authStarted = true
-
-        GKLocalPlayer.local.authenticateHandler = { [weak self] gcViewController, error in
-            if let gcViewController {
-                guard let root = Self.topViewController(from: viewController) else {
-                    print("[CrownDash GC] No presenter for Game Center UI")
-                    return
-                }
-                root.present(gcViewController, animated: true)
+        GKLocalPlayer.local.authenticateHandler = { viewController, error in
+            if let viewController {
+                #if targetEnvironment(simulator)
+                print("[CrownDash GameCenter] Simulator auth prompt skipped for gameplay testing.")
                 return
+                #else
+                Self.topViewController()?.present(viewController, animated: true)
+                return
+                #endif
             }
             if let error {
-                print("[CrownDash GC] Auth error:", error.localizedDescription)
-                return
+                print("[CrownDash GameCenter] Auth failed:", error.localizedDescription)
             }
-            if GKLocalPlayer.local.isAuthenticated {
-                print("[CrownDash GC] Authenticated as", GKLocalPlayer.local.displayName)
-            } else {
-                print("[CrownDash GC] Player not authenticated")
-            }
-            _ = self // keep singleton alive
         }
     }
 
     func submitHighScore(_ rawScore: Int) {
         let score = max(0, rawScore)
-        guard GKLocalPlayer.local.isAuthenticated else {
-            print("[CrownDash GC] Skip submit — not authenticated")
-            return
+        if score > highScore {
+            UserDefaults.standard.set(score, forKey: highScoreKey)
         }
-
-        GKLeaderboard.submitScore(
-            score,
-            context: 0,
-            player: GKLocalPlayer.local,
-            leaderboardIDs: [GameCenterLeaderboards.highScore]
-        ) { error in
+        guard isAuthenticated else { return }
+        GKLeaderboard.submitScore(score, context: 0, player: GKLocalPlayer.local, leaderboardIDs: [leaderboardID]) { error in
             if let error {
-                print("[CrownDash GC] Submit failed:", error.localizedDescription)
-            } else {
-                print("[CrownDash GC] Submitted score", score)
+                print("[CrownDash GameCenter] Leaderboard submit failed:", error.localizedDescription)
+            }
+        }
+        if score >= 1000 {
+            reportAchievement(id: crownMasterID, percent: 100)
+        }
+    }
+    
+    func reportAchievement(id: String, percent: Double) {
+        guard isAuthenticated else { return }
+        let achievement = GKAchievement(identifier: id)
+        achievement.percentComplete = percent
+        achievement.showsCompletionBanner = true
+        GKAchievement.report([achievement]) { error in
+            if let error {
+                print("[CrownDash GameCenter] Achievement failed:", error.localizedDescription)
             }
         }
     }
-
-    private static func topViewController(from preferred: UIViewController?) -> UIViewController? {
-        if let preferred {
-            var top = preferred
-            while let presented = top.presentedViewController {
-                top = presented
-            }
-            return top
-        }
-        guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first(where: { $0.activationState == .foregroundActive }),
-              let root = scene.windows.first(where: { $0.isKeyWindow })?.rootViewController else {
-            return UIApplication.shared.connectedScenes
-                .compactMap { $0 as? UIWindowScene }
-                .flatMap(\.windows)
-                .first { $0.isKeyWindow }?
-                .rootViewController
-        }
+    
+    private static func topViewController() -> UIViewController? {
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        let root = scenes
+            .flatMap(\.windows)
+            .first { $0.isKeyWindow }?
+            .rootViewController
         var top = root
-        while let presented = top.presentedViewController {
+        while let presented = top?.presentedViewController {
             top = presented
         }
         return top

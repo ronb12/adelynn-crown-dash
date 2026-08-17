@@ -16,7 +16,13 @@ ios/CrownDash/.bundle/
 # Xcode / Fastlane build artifacts
 ios/CrownDash/build/
 ios/CrownDash/.tmp/
+ios/CrownDash/DerivedData/
+ios/CrownDash/DerivedDataFastlane/
 ios/CrownDash/DerivedDataScreenshots/
+
+# Local playtest captures and scratch files
+.playtest/
+tmp/
 
 # Accidental duplicate import at repo root
 character (1).fbx

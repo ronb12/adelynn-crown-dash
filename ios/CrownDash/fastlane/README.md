@@ -55,6 +55,14 @@ Upload existing build/CrownDash.ipa to TestFlight (no archive — use when boot 
 
 Upload App Store screenshots only (no metadata, no binary)
 
+### ios upload_metadata
+
+```sh
+[bundle exec] fastlane ios upload_metadata
+```
+
+Upload App Store metadata only (no screenshots, no binary, no review submission)
+
 ### ios beta
 
 ```sh
